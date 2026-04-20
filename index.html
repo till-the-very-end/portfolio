@@ -16,21 +16,19 @@
     }
 
     body {
-      background-color: #fbfaf8;   /* warm off-white, sophisticated base */
+      background-color: #fbfaf8;
       font-family: 'Inter', sans-serif;
       color: #2c2a29;
       line-height: 1.5;
       scroll-behavior: smooth;
     }
 
-    /* custom container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 2rem 2rem;
     }
 
-    /* typography */
     h1, h2, h3, .logo, .section-title {
       font-family: 'Playfair Display', serif;
       font-weight: 500;
@@ -52,12 +50,6 @@
       padding-left: 1rem;
     }
 
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
-    }
-
-    /* header & nav */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -97,7 +89,6 @@
       color: #b47c48;
     }
 
-    /* hero section */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -141,13 +132,13 @@
       color: #b47c48;
     }
 
-    /* clickable social links style */
     .social-link {
       color: #5e4b38;
       text-decoration: none;
       transition: color 0.2s ease;
       cursor: pointer;
     }
+
     .social-link:hover {
       color: #b47c48;
       text-decoration: underline;
@@ -199,15 +190,25 @@
       text-align: center;
       background: #f0ebe4;
       border-radius: 32px;
-      padding: 1rem;
+      padding: 1.5rem;
     }
 
-    .avatar-icon {
-      font-size: 6rem;
-      color: #b47c48;
+    /* Profile image styling */
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #c6a27a;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* cards layout */
+    .profile-img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -261,12 +262,6 @@
       color: #4a3b2e;
     }
 
-    .timeline-item {
-      margin-bottom: 1rem;
-      border-left: 2px solid #e2d5ca;
-      padding-left: 1rem;
-    }
-
     .inline-icon {
       margin-right: 0.6rem;
       color: #b47c48;
@@ -282,7 +277,6 @@
       color: #8e7a66;
     }
 
-    /* responsive */
     @media (max-width: 780px) {
       .navbar {
         flex-direction: column;
@@ -307,11 +301,10 @@
       .container {
         padding: 1.5rem;
       }
-    }
-
-    /* js interactive hover effect for cards (just a little extra) */
-    .extra-fun {
-      transition: all 0.2s;
+      .profile-img {
+        width: 160px;
+        height: 160px;
+      }
     }
   </style>
 </head>
@@ -330,7 +323,7 @@
 
 <main>
   <div class="container" id="home">
-    <!-- Hero Section -->
+    <!-- Hero Section with YOUR IMAGE -->
     <div class="hero">
       <div class="hero-content">
         <div class="hero-tagline">Detail-oriented · Cybersecurity · Java/Python</div>
@@ -341,9 +334,7 @@
           <span><i class="fas fa-envelope"></i> pknailkar@gmail.com</span>
         </div>
         <div class="contact-info">
-          <!-- LinkedIn link - opens in new tab -->
-          <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/prachi-nailkar-85a024236?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a></span>
-          <!-- GitHub link - opens in new tab -->
+          <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/prachi-nailkar-85a024236" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a></span>
           <span><i class="fab fa-github"></i> <a href="https://github.com/till-the-very-end" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a></span>
         </div>
         <p class="hero-desc">
@@ -351,14 +342,14 @@
           Strong problem-solving, auditing documentation, and a commitment to high-quality results.
         </p>
         <div class="btn-group">
-          <!-- Resume preview button now opens the PDF (resume attached) -->
           <a href="#" class="btn btn-primary" id="resumeMsgBtn"><i class="fas fa-download"></i> Resume preview</a>
           <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get in touch</a>
         </div>
       </div>
       <div class="hero-image">
-        <i class="fas fa-user-astronaut avatar-icon"></i>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem; color:#9b7e64;">cyber · code · chic</p>
+        <!-- YOUR PROFILE IMAGE - profile.jpg must be in same folder -->
+        <img src="profile.jpg" alt="Prachi Kumar Nailkar" class="profile-img">
+        <p style="margin-top: 0.8rem; font-size: 0.8rem; color:#9b7e64;">cyber · code · chic</p>
       </div>
     </div>
 
@@ -398,17 +389,16 @@
           <li>Utilized Wireshark, Nmap for network analysis and vulnerability scanning.</li>
         </ul>
       </div>
-      <!-- Leadership & Achievements inline as elegant block -->
       <div style="background: #faf7f2; border-radius: 24px; padding: 1.2rem 1.8rem; margin: 1rem 0;">
         <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
           <div><i class="fas fa-trophy" style="color:#b47c48;"></i> <strong>Best Volunteer</strong> – NSS, Wadia College of Engineering</div>
           <div><i class="fas fa-lightbulb" style="color:#b47c48;"></i> <strong>Smart India Hackathon (SIH)</strong> – National Participant</div>
-          <div><i class="fas fa-star" style="color:#b47c48;"></i> <strong>PR Head</strong> – Nakshatra Astronomy Club (outreach & events)</div>
+          <div><i class="fas fa-star" style="color:#b47c48;"></i> <strong>PR Head</strong> – Nakshatra Astronomy Club</div>
         </div>
       </div>
     </section>
 
-    <!-- Projects + Technical Skills combined in chic layout -->
+    <!-- Projects Section -->
     <section id="projects" style="scroll-margin-top: 90px;">
       <h2><i class="fas fa-code-branch" style="margin-right: 12px; color: #b47c48;"></i> Projects & Technical Arsenal</h2>
       <div class="grid-2">
@@ -426,7 +416,6 @@
         </div>
       </div>
 
-      <!-- Skills Section (Technical + Soft) compact yet chic -->
       <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1rem 0 2rem 0;">
         <div class="card" style="flex: 1;">
           <h3><i class="fas fa-laptop-code"></i> Tech Stack</h3>
@@ -465,7 +454,7 @@
       </div>
     </section>
 
-    <!-- Contact section + simple interactive JS -->
+    <!-- Contact Section -->
     <section id="contact" style="scroll-margin-top: 90px; background: #fefaf5; border-radius: 32px; padding: 2rem; margin: 2rem 0;">
       <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; align-items: center;">
         <div>
@@ -473,8 +462,8 @@
           <p style="margin-bottom: 1rem;">Feel free to reach out for collaborations, opportunities or just a chat.</p>
           <div>
             <i class="fas fa-envelope"></i> pknailkar@gmail.com  |  
-            <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/prachi-nailkar-85a024236?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>  |  
-            <i class="fab fa-github"></i> <a href="https://github.com/till-the-very-end" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+            <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/prachi-nailkar-85a024236" target="_blank" class="social-link">LinkedIn</a>  |  
+            <i class="fab fa-github"></i> <a href="https://github.com/till-the-very-end" target="_blank" class="social-link">GitHub</a>
           </div>
           <div class="btn-group" style="margin-top: 1.5rem;">
             <button id="copyEmailBtn" class="btn btn-outline"><i class="far fa-copy"></i> Copy email</button>
@@ -493,48 +482,33 @@
 </footer>
 
 <script>
-  // Interactive JS for chic micro-interactions: copy email, random quote, resume preview (PDF)
   const copyBtn = document.getElementById('copyEmailBtn');
   const quoteBtn = document.getElementById('showQuoteBtn');
   const dynamicMsgDiv = document.getElementById('dynamicMsg');
   const resumeMsgBtn = document.getElementById('resumeMsgBtn');
 
-  // Direct link to the uploaded resume PDF (using data URI or relative path? we will embed a download via blob)
-  // Since the resume file is attached as "Prachi_Nailkar_Resume_Latest.pdf", we create a dynamic download + preview.
-  // To maintain original design but provide actual resume open, we generate a temporary blob URL from the attached file content?
-  // However, the user provided the PDF file reference. In a real deployment, the PDF would be hosted alongside index.html.
-  // For this environment, we'll simulate by offering a download button that triggers the PDF (assuming same directory).
-  // Additionally, we'll use the fact that the PDF is available in the chat context. I'll create a function that opens the PDF in a new tab if possible.
-  // Because the PDF file is given as attached content, we can create a Blob from the base64? Unfortunately the PDF content isn't base64 here.
-  // But the user expects that the link to resume works. Since the PDF is part of the conversation as an uploaded file, the best practice:
-  // In the real deployment, they will have the PDF in the same folder. For now, I'll use a dynamic approach: on clicking "Resume preview",
-  // we try to open "Prachi_Nailkar_Resume_Latest.pdf" in a new tab. The user can place the PDF next to index.html.
-  // Also add a fallback message for development.
-  
+  // Resume function - opens your PDF
   function openResume() {
-    // The resume file name as provided by the user.
     const resumeFileName = "Prachi_Nailkar_Resume_Latest.pdf";
-    // Attempt to open in new tab
-    const win = window.open(resumeFileName, '_blank');
-    if (!win || win.closed || typeof win.closed === 'undefined') {
-      // fallback: show message that PDF should be in same directory
-      dynamicMsgDiv.innerHTML = `<i class="fas fa-file-pdf"></i> 📄 Place "${resumeFileName}" in the same folder as this webpage, or <a href="#" id="fallbackResumeLink" style="color:#b47c48;">click here to view your uploaded resume.</a>`;
-      const fallbackLink = document.getElementById('fallbackResumeLink');
-      if (fallbackLink) {
-        fallbackLink.addEventListener('click', (e) => {
-          e.preventDefault();
-          dynamicMsgDiv.innerHTML = `<i class="fas fa-download"></i> You can download the resume from your local files. Ensure the PDF is alongside index.html for direct access.`;
-        });
-      }
+    const resumeWindow = window.open(resumeFileName, '_blank');
+    
+    if (!resumeWindow || resumeWindow.closed) {
+      const link = document.createElement('a');
+      link.href = resumeFileName;
+      link.download = "Prachi_Nailkar_Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      dynamicMsgDiv.innerHTML = `<i class="fas fa-download"></i> Downloading resume...`;
     } else {
-      dynamicMsgDiv.innerHTML = `<i class="fas fa-file-pdf"></i> Opening resume PDF...`;
-      setTimeout(() => {
-        if (dynamicMsgDiv.innerHTML.includes("Opening")) dynamicMsgDiv.innerHTML = "";
-      }, 2000);
+      dynamicMsgDiv.innerHTML = `<i class="fas fa-file-pdf"></i> Opening resume...`;
     }
+    
+    setTimeout(() => {
+      if (dynamicMsgDiv.innerHTML.includes("resume")) dynamicMsgDiv.innerHTML = "";
+    }, 3000);
   }
 
-  // Sophisticated quotes aligned with cybersecurity & determination
   const chicQuotes = [
     "✨ Elegance in code, precision in security.",
     "🔐 Details matter: the smallest vulnerability can be a gateway.",
@@ -546,33 +520,19 @@
   function showRandomQuote() {
     const randomIndex = Math.floor(Math.random() * chicQuotes.length);
     dynamicMsgDiv.innerHTML = `<i class="fas fa-feather-alt"></i> ${chicQuotes[randomIndex]}`;
-    setTimeout(() => {
-      if (dynamicMsgDiv.innerHTML.includes(chicQuotes[randomIndex])) {
-        setTimeout(() => {
-          if (dynamicMsgDiv.innerHTML !== "") dynamicMsgDiv.style.opacity = "0.8";
-        }, 4000);
-      }
-    }, 100);
   }
 
-  if (quoteBtn) {
-    quoteBtn.addEventListener('click', showRandomQuote);
-  }
-
+  if (quoteBtn) quoteBtn.addEventListener('click', showRandomQuote);
+  
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
-      const email = "pknailkar@gmail.com";
-      navigator.clipboard.writeText(email).then(() => {
-        dynamicMsgDiv.innerHTML = `<i class="fas fa-check-circle"></i> Email copied to clipboard! ✨`;
-        setTimeout(() => {
-          if (dynamicMsgDiv.innerHTML.includes("copied")) dynamicMsgDiv.innerHTML = "";
-        }, 2500);
-      }).catch(() => {
-        dynamicMsgDiv.innerHTML = `⚠️ Could not copy, but email is: ${email}`;
+      navigator.clipboard.writeText("pknailkar@gmail.com").then(() => {
+        dynamicMsgDiv.innerHTML = `<i class="fas fa-check-circle"></i> Email copied! ✨`;
+        setTimeout(() => dynamicMsgDiv.innerHTML = "", 2000);
       });
     });
   }
-
+  
   if (resumeMsgBtn) {
     resumeMsgBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -580,7 +540,7 @@
     });
   }
 
-  // Add a bit of chic scroll highlight effect (polish)
+  // Scroll spy for navigation
   const sections = document.querySelectorAll('section, .hero');
   const navLinks = document.querySelectorAll('.nav-links a');
   
@@ -602,31 +562,14 @@
         link.style.color = '#b47c48';
       }
     });
-    if (!current && window.scrollY < 100) {
-      navLinks.forEach(link => {
-        if (link.getAttribute('href') === '#home') link.style.color = '#b47c48';
-        else link.style.color = '#2c2a29';
-      });
-    }
   });
 
-  // extra little hover interactive on cards
-  const cards = document.querySelectorAll('.card');
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.style.transition = 'transform 0.25s ease, box-shadow 0.3s';
-    });
-  });
-  
-  // automatically show a welcome chic message (after load)
+  // Welcome message
   window.addEventListener('load', () => {
-    console.log('Chic portfolio ready — Prachi Kumar Nailkar with live links');
     dynamicMsgDiv.innerHTML = '✨ Welcome to my portfolio — where code meets elegance.';
     setTimeout(() => {
       if (dynamicMsgDiv.innerHTML.includes('Welcome')) {
-        setTimeout(() => {
-          dynamicMsgDiv.innerHTML = '';
-        }, 3500);
+        setTimeout(() => dynamicMsgDiv.innerHTML = '', 3500);
       }
     }, 3000);
   });
