@@ -1,578 +1,648 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Prachi Kumar Nailkar | Chic Portfolio</title>
-  <!-- Google Fonts: Modern serif + sans-serif for sophisticated contrast -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (free icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #fbfaf8;
-      font-family: 'Inter', sans-serif;
-      color: #2c2a29;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 2rem;
-    }
-
-    h1, h2, h3, .logo, .section-title {
-      font-family: 'Playfair Display', serif;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-    }
-
-    h1 {
-      font-size: 3.2rem;
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 0.4rem;
-      color: #1e1c1a;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      border-left: 5px solid #c6a27a;
-      padding-left: 1rem;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 1.5rem 2rem;
-      background: rgba(255, 253, 250, 0.96);
-      backdrop-filter: blur(2px);
-      border-bottom: 1px solid #e9e2da;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo {
-      font-size: 1.7rem;
-      font-weight: 600;
-      letter-spacing: -0.3px;
-      color: #b47c48;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 500;
-      color: #2c2a29;
-      transition: color 0.2s ease;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover {
-      color: #b47c48;
-    }
-
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
-      margin: 2rem 0 3rem 0;
-    }
-
-    .hero-content {
-      flex: 1;
-    }
-
-    .hero-tagline {
-      font-size: 1.1rem;
-      color: #7d6b5a;
-      margin-bottom: 1rem;
-      letter-spacing: 0.3px;
-      font-weight: 400;
-    }
-
-    .hero-desc {
-      font-size: 1rem;
-      max-width: 550px;
-      margin: 1rem 0 1.6rem 0;
-      color: #4b3f36;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.9rem;
-      color: #5e4b38;
-      margin-bottom: 1rem;
-    }
-
-    .contact-info i {
-      margin-right: 0.5rem;
-      width: 1.2rem;
-      color: #b47c48;
-    }
-
-    .social-link {
-      color: #5e4b38;
-      text-decoration: none;
-      transition: color 0.2s ease;
-      cursor: pointer;
-    }
-
-    .social-link:hover {
-      color: #b47c48;
-      text-decoration: underline;
-    }
-
-    .btn-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 0.7rem 1.5rem;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.25s;
-      border: 1px solid transparent;
-      font-size: 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: #2c2a29;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #b47c48;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border: 1px solid #d4c5b7;
-      color: #2c2a29;
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      border-color: #b47c48;
-      color: #b47c48;
-    }
-
-    .hero-image {
-      flex: 0.4;
-      text-align: center;
-      background: #f0ebe4;
-      border-radius: 32px;
-      padding: 1.5rem;
-    }
-
-    /* Profile image styling */
-    .profile-img {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #c6a27a;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .profile-img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .card {
-      background: #ffffff;
-      border-radius: 24px;
-      padding: 1.5rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.02);
-      transition: transform 0.2s ease, box-shadow 0.2s;
-      border: 1px solid #f0eae3;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
-      border-color: #e0d3c7;
-    }
-
-    .card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.75rem;
-      color: #3e3328;
-    }
-
-    .card-badge {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #b47c48;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1rem;
-    }
-
-    .skill-tag {
-      background: #f5efe9;
-      padding: 0.25rem 1rem;
-      border-radius: 40px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #4a3b2e;
-    }
-
-    .inline-icon {
-      margin-right: 0.6rem;
-      color: #b47c48;
-      width: 1.2rem;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      padding: 2rem;
-      border-top: 1px solid #e9e2da;
-      font-size: 0.8rem;
-      color: #8e7a66;
-    }
-
-    @media (max-width: 780px) {
-      .navbar {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-      }
-      .hero-content {
-        text-align: center;
-      }
-      .contact-info {
-        justify-content: center;
-      }
-      .btn-group {
-        justify-content: center;
-      }
-      h1 {
-        font-size: 2.4rem;
-      }
-      .container {
-        padding: 1.5rem;
-      }
-      .profile-img {
-        width: 160px;
-        height: 160px;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prachi Kumar Nailkar - Cybersecurity & GRC Engineering Portfolio</title>
+  <meta name="description" content="Portfolio of Prachi Kumar Nailkar: Computer Engineering student specializing in Cybersecurity, GRC, ISO 27001, SOC 2, and Cloud Security.">
+  
+  <!-- Technical Typography: IBM Plex Sans & IBM Plex Mono (Zero Inter, Zero Space Grotesk, Zero Instrument Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="logo">P. Nailkar</div>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- Top Navigation Bar -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a href="#about" class="nav-brand">
+        <span class="brand-monogram">PKN</span>
+        <span class="brand-name">Prachi Kumar Nailkar</span>
+      </a>
 
-<main>
-  <div class="container" id="home">
-    <!-- Hero Section with YOUR IMAGE -->
-    <div class="hero">
-      <div class="hero-content">
-        <div class="hero-tagline">Detail-oriented · Cybersecurity · Java/Python</div>
-        <h1>Prachi Kumar Nailkar</h1>
-        <div class="contact-info">
-          <span><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra, India</span>
-          <span><i class="fas fa-phone-alt"></i> +91 7975010985</span>
-          <span><i class="fas fa-envelope"></i> pknailkar@gmail.com</span>
-        </div>
-        <div class="contact-info">
-          <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/prachi-nailkar-85a024236" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a></span>
-          <span><i class="fab fa-github"></i> <a href="https://github.com/till-the-very-end" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a></span>
-        </div>
-        <p class="hero-desc">
-          Computer professional with programming expertise (Java, Python) and cybersecurity tools. 
-          Strong problem-solving, auditing documentation, and a commitment to high-quality results.
-        </p>
-        <div class="btn-group">
-          <a href="#" class="btn btn-primary" id="resumeMsgBtn"><i class="fas fa-download"></i> Resume preview</a>
-          <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get in touch</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <!-- YOUR PROFILE IMAGE - profile.jpg must be in same folder -->
-        <img src="profile.jpg" alt="Prachi Kumar Nailkar" class="profile-img">
-        <p style="margin-top: 0.8rem; font-size: 0.8rem; color:#9b7e64;">cyber · code · chic</p>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Competencies</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn-theme-toggle" type="button" aria-label="Toggle High-Contrast Theme">
+          THEME: <span class="theme-mode-label">LIGHT</span>
+        </button>
+        <a href="Prachi_Kumar_Nailkar_Resume.pdf" download="Prachi_Kumar_Nailkar_Resume.pdf" class="btn btn-primary btn-sm">
+          Resume (PDF)
+        </a>
       </div>
     </div>
+  </header>
 
-    <!-- Education Section -->
-    <section id="education" style="scroll-margin-top: 90px;">
-      <h2><i class="fas fa-graduation-cap" style="margin-right: 12px; color: #b47c48;"></i> Education</h2>
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-badge">Bachelor of Engineering (3rd Year)</div>
-          <h3>Modern Education Society's Wadia College of Engineering</h3>
-          <p><i class="fas fa-map-pin inline-icon"></i> Pune, India · Present</p>
-          <p>Pursuing Computer Engineering with focus on cybersecurity fundamentals and software development.</p>
-        </div>
-        <div class="card">
-          <div class="card-badge">Pre-University</div>
-          <h3>Bangalore International Academy</h3>
-          <p><i class="fas fa-map-pin inline-icon"></i> Bengaluru, India · Completed</p>
-        </div>
-        <div class="card">
-          <div class="card-badge">Secondary Education</div>
-          <h3>Christ School ICSE, SG Palya</h3>
-          <p><i class="fas fa-map-pin inline-icon"></i> Bengaluru, India · Completed</p>
-          <p>ICSE curriculum with strong academic record.</p>
-        </div>
-      </div>
-    </section>
+  <main>
+    <!-- Hero / Profile Section -->
+    <section id="about" class="hero-section">
+      <div class="container">
+        <div class="hero-layout">
+          <div class="hero-main">
+            <div class="hero-meta-row">
+              <span class="status-indicator">
+                <span class="status-dot"></span> Available for Internships & Security Roles
+              </span>
+            </div>
 
-    <!-- Work Experience & Internship -->
-    <section id="experience" style="scroll-margin-top: 90px;">
-      <h2><i class="fas fa-briefcase" style="margin-right: 12px; color: #b47c48;"></i> Work Experience</h2>
-      <div class="card" style="margin-bottom: 2rem;">
-        <div class="card-badge">Oct 2025 – Dec 2025 · Internship</div>
-        <h3>Jyesta Corporate Entity · Cybersecurity Intern</h3>
-        <ul style="margin-top: 0.8rem; margin-left: 1.2rem; list-style-type: circle; color: #4b3f36;">
-          <li>Practical experience in cybersecurity fundamentals & network defense strategies.</li>
-          <li>Assisted in auditing and documentation for security protocols & compliance.</li>
-          <li>Utilized Wireshark, Nmap for network analysis and vulnerability scanning.</li>
-        </ul>
-      </div>
-      <div style="background: #faf7f2; border-radius: 24px; padding: 1.2rem 1.8rem; margin: 1rem 0;">
-        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
-          <div><i class="fas fa-trophy" style="color:#b47c48;"></i> <strong>Best Volunteer</strong> – NSS, Wadia College of Engineering</div>
-          <div><i class="fas fa-lightbulb" style="color:#b47c48;"></i> <strong>Smart India Hackathon (SIH)</strong> – National Participant</div>
-          <div><i class="fas fa-star" style="color:#b47c48;"></i> <strong>PR Head</strong> – Nakshatra Astronomy Club</div>
-        </div>
-      </div>
-    </section>
+            <h1 class="hero-title">Prachi Kumar Nailkar</h1>
+            <p class="hero-role">Cybersecurity, GRC & Cloud Security Engineering</p>
 
-    <!-- Projects Section -->
-    <section id="projects" style="scroll-margin-top: 90px;">
-      <h2><i class="fas fa-code-branch" style="margin-right: 12px; color: #b47c48;"></i> Projects & Technical Arsenal</h2>
-      <div class="grid-2">
-        <div class="card">
-          <h3>Startup GRC Analysis (CoinFlow India)</h3>
-          <div class="card-badge">Governance, Risk & Compliance · Academic Project</div>
-          <p>Hypothetical GRC audit for a non-funded fintech startup. Identified security risks, policy gaps, documented findings and proposed mitigation strategies.</p>
-          <div class="skill-list"><span class="skill-tag">Risk Assessment</span><span class="skill-tag">Audit Docs</span><span class="skill-tag">Compliance</span></div>
-        </div>
-        <div class="card">
-          <h3>Network Vulnerability Lab</h3>
-          <div class="card-badge">Wireshark · Nmap · Burp Suite</div>
-          <p>Simulated scanning and packet analysis to identify vulnerabilities in a test environment. Enhanced understanding of defense strategies.</p>
-          <div class="skill-list"><span class="skill-tag">Network Analysis</span><span class="skill-tag">CTF basics</span></div>
-        </div>
-      </div>
+            <p class="hero-bio">
+              Third-year Computer Engineering student at Modern Education Society's Wadia College of Engineering, Pune.
+              Hands-on internship experience in vulnerability assessment, risk and control-gap identification, audit documentation,
+              and compliance reporting across ISO 27001, SOC 2, NIST CSF, and the DPDP Act.
+              Practical tooling in Burp Suite, Wireshark, Nmap, AWS Cloud, Python, and MongoDB.
+            </p>
 
-      <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1rem 0 2rem 0;">
-        <div class="card" style="flex: 1;">
-          <h3><i class="fas fa-laptop-code"></i> Tech Stack</h3>
-          <div class="skill-list">
-            <span class="skill-tag">Java (Basic)</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">SQL (Basic)</span>
-            <span class="skill-tag">Wireshark</span>
-            <span class="skill-tag">Burp Suite</span>
-            <span class="skill-tag">Nmap</span>
-            <span class="skill-tag">Basic CTF</span>
+            <div class="hero-details-grid">
+              <div class="meta-item">
+                <span class="meta-label">Location</span>
+                <span class="meta-value">Pune, Maharashtra, India</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Email</span>
+                <span class="meta-value"><a href="mailto:pknailkar@gmail.com">pknailkar@gmail.com</a></span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Phone</span>
+                <span class="meta-value">+91 7975010985</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Profiles</span>
+                <span class="meta-value">
+                  <a href="https://www.linkedin.com/in/prachi-nailkar-85a024236" target="_blank" rel="noopener noreferrer">LinkedIn [↗]</a> / 
+                  <a href="https://github.com/till-the-very-end" target="_blank" rel="noopener noreferrer">GitHub [↗]</a>
+                </span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">Selected Projects</a>
+              <a href="#" id="openResumeModal" class="btn btn-secondary">Preview Resume</a>
+              <button type="button" class="btn btn-secondary btn-copy-email">Copy Email</button>
+            </div>
           </div>
-        </div>
-        <div class="card" style="flex: 1;">
-          <h3><i class="fas fa-heart"></i> Soft Skills</h3>
-          <div class="skill-list">
-            <span class="skill-tag">Communication</span>
-            <span class="skill-tag">Team Collaboration</span>
-            <span class="skill-tag">Detail-Oriented</span>
-            <span class="skill-tag">Problem-Solving</span>
-            <span class="skill-tag">Audit Documentation</span>
+
+          <div class="hero-photo-card">
+            <img src="profile.jpg" alt="Prachi Kumar Nailkar" class="hero-photo">
+            <div class="photo-caption">
+              <span>Prachi Nailkar</span>
+              <span class="mono">Pune, IN</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Certifications -->
-    <section>
-      <h2><i class="fas fa-certificate" style="margin-right: 12px; color: #b47c48;"></i> Certifications</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
-        <div class="card" style="flex: 1; min-width: 200px;"><i class="fas fa-shield-alt" style="color:#b47c48;"></i> Cybersecurity Analyst Professional – IBM</div>
-        <div class="card" style="flex: 1; min-width: 200px;"><i class="fas fa-chalkboard-user"></i> Cybersecurity Job Simulation – Forage</div>
-        <div class="card" style="flex: 1; min-width: 200px;"><i class="fas fa-network-wired"></i> Networking Basics – Infosys Springboard</div>
-        <div class="card" style="flex: 1; min-width: 200px;"><i class="fas fa-comment-dots"></i> ChatGPT for Everyone – Guvi HCL</div>
-        <div class="card" style="flex: 1; min-width: 200px;"><i class="fas fa-coffee"></i> Java Basics Aptitude</div>
+    <!-- Work Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>
+          <span>Work Experience</span>
+          <span class="section-counter">01 / 05</span>
+        </h2>
+
+        <div class="experience-list">
+          <!-- Role 1 -->
+          <article class="experience-entry">
+            <div class="entry-header">
+              <div class="entry-title-group">
+                <h3>Risk & Compliance Intern</h3>
+                <div class="entry-company">Uptoskills (Remote)</div>
+              </div>
+              <div class="entry-meta">
+                <span>Jan 2026 - Apr 2026</span>
+              </div>
+            </div>
+
+            <ul class="entry-bullets">
+              <li>Prepared vulnerability assessment and compliance reports using Burp Suite, Nmap, and Nikto, documenting specific findings and concrete remediation timelines.</li>
+              <li>Supported risk and control-gap identification through security reconnaissance using WhatWeb, Wappalyzer, and Netcraft.</li>
+              <li>Produced structured, audit-ready documentation aligned with ISO 27001 and SOC 2 evidence requirements.</li>
+              <li>Translated technical vulnerability findings into executive summaries for non-technical stakeholders and organized remediation tracking.</li>
+            </ul>
+
+            <div class="entry-tags">
+              <span class="tech-tag">ISO 27001</span>
+              <span class="tech-tag">SOC 2</span>
+              <span class="tech-tag">Burp Suite</span>
+              <span class="tech-tag">Nmap</span>
+              <span class="tech-tag">Nikto</span>
+              <span class="tech-tag">Audit Documentation</span>
+            </div>
+          </article>
+
+          <!-- Role 2 -->
+          <article class="experience-entry">
+            <div class="entry-header">
+              <div class="entry-title-group">
+                <h3>Cybersecurity & Compliance Intern</h3>
+                <div class="entry-company">Jyesta Corporate Entity (Pune, India)</div>
+              </div>
+              <div class="entry-meta">
+                <span>Oct 2025 - Dec 2025</span>
+              </div>
+            </div>
+
+            <ul class="entry-bullets">
+              <li>Supported security audit readiness and compliance reviews by documenting 20+ security control findings in structured audit logs.</li>
+              <li>Maintained audit documentation and security evidence repositories, ensuring findings were tagged and version-controlled for audit traceability.</li>
+              <li>Translated technical network traffic findings from Wireshark and Nmap into structured policy and compliance documentation.</li>
+            </ul>
+
+            <div class="entry-tags">
+              <span class="tech-tag">Audit Readiness</span>
+              <span class="tech-tag">Wireshark</span>
+              <span class="tech-tag">Nmap</span>
+              <span class="tech-tag">Control Evidence</span>
+              <span class="tech-tag">Network Defense</span>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" style="scroll-margin-top: 90px; background: #fefaf5; border-radius: 32px; padding: 2rem; margin: 2rem 0;">
-      <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; align-items: center;">
-        <div>
-          <h2 style="border-left: none; padding-left: 0; margin-bottom: 0.5rem;">Let's connect</h2>
-          <p style="margin-bottom: 1rem;">Feel free to reach out for collaborations, opportunities or just a chat.</p>
+    <!-- Selected Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>
+          <span>Selected Projects & Engineering Case Studies</span>
+          <span class="section-counter">02 / 05</span>
+        </h2>
+
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="grc">GRC & Compliance</button>
+          <button class="filter-btn" data-filter="cloud">Cloud & Adversary Simulation</button>
+          <button class="filter-btn" data-filter="appsec">Security Tools & ML</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Case Study 1 -->
+          <article class="project-card" data-category="grc">
+            <div>
+              <div class="project-badge-row">
+                <span class="project-category">Governance, Risk & Compliance</span>
+                <span class="project-status">Completed</span>
+              </div>
+              <h3>FinTech GRC Automation (CoinFlow India)</h3>
+              <p class="project-summary">
+                Designed an automated policy gap analysis framework for a fintech startup handling sensitive transaction data.
+                The system maps operational controls directly against Reserve Bank of India (RBI) fintech guidelines and ISO 27001 requirements.
+              </p>
+              <div class="project-metrics">
+                <span class="metrics-label">Engineering Impact</span>
+                <span class="metrics-value">Reduced manual audit evaluation effort by 40% using automated rule checks.</span>
+              </div>
+            </div>
+            <div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">ISO 27001</span>
+                <span class="tech-tag">RBI Guidelines</span>
+                <span class="tech-tag">Gap Analysis</span>
+                <span class="tech-tag">JSON Schema</span>
+              </div>
+              <div class="project-footer">
+                <span class="mono" style="font-size: 0.8rem; color: var(--text-muted);">ISMS Framework</span>
+                <a href="https://github.com/till-the-very-end" target="_blank" rel="noopener noreferrer">View Project [↗]</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 2 -->
+          <article class="project-card" data-category="cloud">
+            <div>
+              <div class="project-badge-row">
+                <span class="project-category">Cloud Security & Automation</span>
+                <span class="project-status">Active Pipeline</span>
+              </div>
+              <h3>SOAR Infrastructure & Adversary Simulation</h3>
+              <p class="project-summary">
+                Engineered an attack simulation and automated verification layer on AWS.
+                Deploys adversary profiles via AWS Systems Manager (SSM) agent to test persistence mechanisms,
+                log detection accuracy, and trigger remediation automation runbooks.
+              </p>
+              <div class="project-metrics">
+                <span class="metrics-label">Architecture</span>
+                <span class="metrics-value">Terraform IaC, Caldera / Sandcat agent profiles, AWS SSM, PowerShell runner.</span>
+              </div>
+            </div>
+            <div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Terraform</span>
+                <span class="tech-tag">AWS SSM</span>
+                <span class="tech-tag">Sandcat / Caldera</span>
+                <span class="tech-tag">PowerShell</span>
+                <span class="tech-tag">Incident Response</span>
+              </div>
+              <div class="project-footer">
+                <span class="mono" style="font-size: 0.8rem; color: var(--text-muted);">Cloud SecOps</span>
+                <a href="https://github.com/till-the-very-end" target="_blank" rel="noopener noreferrer">View Implementation [↗]</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 3 -->
+          <article class="project-card" data-category="grc">
+            <div>
+              <div class="project-badge-row">
+                <span class="project-category">Zero-Trust Audit</span>
+                <span class="project-status">Completed</span>
+              </div>
+              <h3>CyberGita: EdTech Security & Privacy Audit</h3>
+              <p class="project-summary">
+                Executed an end-to-end ISMS-style security evaluation of an educational platform.
+                Identified access management vulnerabilities and drafted a risk-prioritized remediation roadmap
+                aligned with India's Digital Personal Data Protection (DPDP) Act and the NIST Cybersecurity Framework.
+              </p>
+              <div class="project-metrics">
+                <span class="metrics-label">Regulatory Alignment</span>
+                <span class="metrics-value">NIST CSF (Identify, Protect, Detect) and DPDP Act data fiduciary obligations.</span>
+              </div>
+            </div>
+            <div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">DPDP Act</span>
+                <span class="tech-tag">NIST CSF</span>
+                <span class="tech-tag">ISMS Audit</span>
+                <span class="tech-tag">Access Control</span>
+                <span class="tech-tag">Threat Modeling</span>
+              </div>
+              <div class="project-footer">
+                <span class="mono" style="font-size: 0.8rem; color: var(--text-muted);">Compliance Blueprint</span>
+                <a href="https://github.com/till-the-very-end" target="_blank" rel="noopener noreferrer">View Report [↗]</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 4 -->
+          <article class="project-card" data-category="appsec">
+            <div>
+              <div class="project-badge-row">
+                <span class="project-category">AppSec & Machine Learning</span>
+                <span class="project-status">Deployed</span>
+              </div>
+              <h3>AI Phishing Email Classifier</h3>
+              <p class="project-summary">
+                Trained and deployed a machine-learning text classifier to identify phishing patterns in email headers and payloads.
+                Features token analysis, serialized inference with joblib, and probability confidence scoring for incident response triage.
+              </p>
+              <div class="project-metrics">
+                <span class="metrics-label">Deployment</span>
+                <span class="metrics-value">Python pipeline, scikit-learn model serialization, interactive Streamlit frontend.</span>
+              </div>
+            </div>
+            <div>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Scikit-Learn</span>
+                <span class="tech-tag">Joblib</span>
+                <span class="tech-tag">Streamlit</span>
+                <span class="tech-tag">Phishing Detection</span>
+              </div>
+              <div class="project-footer">
+                <span class="mono" style="font-size: 0.8rem; color: var(--text-muted);">ML Defense</span>
+                <a href="https://github.com/till-the-very-end" target="_blank" rel="noopener noreferrer">View Repository [↗]</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Interactive GRC Risk Matrix Live Engineering Tool -->
+        <div class="tool-box">
+          <div class="tool-header">
+            <h3>Interactive GRC Risk Scoring Calculator</h3>
+            <p>Live interactive calculation tool modeling quantitative control decisions according to ISO 27001 risk assessment standards.</p>
+          </div>
+
+          <div class="tool-controls">
+            <div class="control-group">
+              <label for="assetCriticality">Asset Criticality (Impact)</label>
+              <select id="assetCriticality" class="tool-select">
+                <option value="1">1 - Low (Internal documentation, public web)</option>
+                <option value="2">2 - Medium (Internal tools, non-sensitive data)</option>
+                <option value="3" selected>3 - High (Customer PII, application databases)</option>
+                <option value="4">4 - Critical (Financial core, master auth credentials)</option>
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="threatLikelihood">Threat Likelihood (Probability)</label>
+              <select id="threatLikelihood" class="tool-select">
+                <option value="1">1 - Rare (Air-gapped, no public exposure)</option>
+                <option value="2" selected>2 - Moderate (Network internal, authenticated)</option>
+                <option value="3">3 - Likely (Internet exposed, targeted attack surface)</option>
+                <option value="4">4 - Highly Frequent (Known CVE, active bot scans)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="tool-output">
+            <div id="riskScore" class="score-badge score-med">6 (MED)</div>
+            <div id="riskRec" class="control-advice">
+              <strong>Recommended Control Baseline:</strong> Enforce role-based access control and semi-annual gap audits.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Competencies & Matrix -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>
+          <span>Technical Competencies</span>
+          <span class="section-counter">03 / 05</span>
+        </h2>
+
+        <div class="skills-matrix">
+          <!-- Column 1 -->
+          <div class="skills-column">
+            <h3 class="skills-column-title">Cloud & Infrastructure</h3>
+            <ul class="skills-list">
+              <li><span>AWS Cloud Practitioner</span> <span class="skill-level">Certified</span></li>
+              <li><span>Shared Responsibility Model</span> <span class="skill-level">Core</span></li>
+              <li><span>AWS Systems Manager (SSM)</span> <span class="skill-level">Hands-on</span></li>
+              <li><span>MongoDB (CRUD)</span> <span class="skill-level">Working</span></li>
+              <li><span>SQL Relational DBs</span> <span class="skill-level">Basic</span></li>
+              <li><span>Linux CLI & Bash</span> <span class="skill-level">Proficient</span></li>
+            </ul>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="skills-column">
+            <h3 class="skills-column-title">Security & GRC Frameworks</h3>
+            <ul class="skills-list">
+              <li><span>ISO/IEC 27001 (ISMS)</span> <span class="skill-level">Core</span></li>
+              <li><span>SOC 2 Type II Controls</span> <span class="skill-level">Audit Ready</span></li>
+              <li><span>NIST CSF (IPDRR)</span> <span class="skill-level">Applied</span></li>
+              <li><span>DPDP Act (India 2023)</span> <span class="skill-level">Regulatory</span></li>
+              <li><span>Vulnerability Assessment</span> <span class="skill-level">Hands-on</span></li>
+              <li><span>Audit Trail & Documentation</span> <span class="skill-level">Proficient</span></li>
+            </ul>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="skills-column">
+            <h3 class="skills-column-title">Analysis & Recon Tools</h3>
+            <ul class="skills-list">
+              <li><span>Wireshark (Packet Analysis)</span> <span class="skill-level">Advanced</span></li>
+              <li><span>Burp Suite Community</span> <span class="skill-level">Practical</span></li>
+              <li><span>Nmap (Network Mapping)</span> <span class="skill-level">Proficient</span></li>
+              <li><span>Nikto Web Vulnerability</span> <span class="skill-level">Hands-on</span></li>
+              <li><span>WhatWeb & Wappalyzer</span> <span class="skill-level">Recon</span></li>
+              <li><span>SSLScan & Netcraft</span> <span class="skill-level">Applied</span></li>
+            </ul>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="skills-column">
+            <h3 class="skills-column-title">Programming & Scripting</h3>
+            <ul class="skills-list">
+              <li><span>Python 3 (Security Scripting)</span> <span class="skill-level">Primary</span></li>
+              <li><span>Java Fundamentals</span> <span class="skill-level">Academic</span></li>
+              <li><span>PowerShell Scripting</span> <span class="skill-level">Automation</span></li>
+              <li><span>Git & GitHub Workflows</span> <span class="skill-level">Versioned</span></li>
+              <li><span>Streamlit Web Framework</span> <span class="skill-level">Application</span></li>
+              <li><span>Technical Writing / Policy</span> <span class="skill-level">Documentation</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education, Certifications & Leadership -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2>
+          <span>Education & Credentials</span>
+          <span class="section-counter">04 / 05</span>
+        </h2>
+
+        <div class="split-grid">
+          <!-- Education Column -->
           <div>
-            <i class="fas fa-envelope"></i> pknailkar@gmail.com  |  
-            <i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/prachi-nailkar-85a024236" target="_blank" class="social-link">LinkedIn</a>  |  
-            <i class="fab fa-github"></i> <a href="https://github.com/till-the-very-end" target="_blank" class="social-link">GitHub</a>
+            <h3 style="margin-bottom: var(--space-4);">Academic Background</h3>
+            
+            <div class="record-card">
+              <div class="record-period">Expected 2027 | Pune, India</div>
+              <div class="record-title">Modern Education Society's Wadia College of Engineering</div>
+              <div class="record-subtitle">Bachelor of Engineering (B.E.), Computer Engineering - 3rd Year</div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 6px; margin-bottom: 0;">
+                Focus on computer networks, information security, database management systems, and algorithms.
+              </p>
+            </div>
+
+            <div class="record-card">
+              <div class="record-period">Completed | Bengaluru, India</div>
+              <div class="record-title">Bangalore International Academy</div>
+              <div class="record-subtitle">Pre-University Course (PCMB)</div>
+            </div>
+
+            <div class="record-card">
+              <div class="record-period">Completed | Bengaluru, India</div>
+              <div class="record-title">Christ School ICSE, SG Palya</div>
+              <div class="record-subtitle">Secondary Education (ICSE Curriculum)</div>
+            </div>
+
+            <h3 style="margin-top: var(--space-6); margin-bottom: var(--space-4);">Leadership & College Honors</h3>
+            <div class="achieve-grid">
+              <div class="achieve-card">
+                <div class="achieve-role">NSS Unit</div>
+                <div class="achieve-title">Best Volunteer Award</div>
+                <div class="achieve-desc">Wadia College of Engineering NSS unit for social impact initiatives and community leadership.</div>
+              </div>
+              <div class="achieve-card">
+                <div class="achieve-role">National Level</div>
+                <div class="achieve-title">Smart India Hackathon (SIH)</div>
+                <div class="achieve-desc">Participant in national engineering hackathon addressing real-world technology challenges.</div>
+              </div>
+              <div class="achieve-card">
+                <div class="achieve-role">Astronomy Club</div>
+                <div class="achieve-title">Head of Public Relations</div>
+                <div class="achieve-desc">Nakshatra Astronomy Club: led outreach, event communications, and student workshops.</div>
+              </div>
+            </div>
           </div>
-          <div class="btn-group" style="margin-top: 1.5rem;">
-            <button id="copyEmailBtn" class="btn btn-outline"><i class="far fa-copy"></i> Copy email</button>
-            <button id="showQuoteBtn" class="btn btn-outline"><i class="fas fa-quote-right"></i> Chic Insight</button>
+
+          <!-- Certifications Column -->
+          <div>
+            <h3 style="margin-bottom: var(--space-4);">Certifications & Professional Training</h3>
+            <ul class="cert-list">
+              <li class="cert-item">
+                <div>
+                  <div class="cert-name">AWS Cloud Practitioner Essentials</div>
+                  <div class="cert-issuer">AWS Training & Certification (Oct 2026)</div>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--brand-navy);">Cloud</span>
+              </li>
+
+              <li class="cert-item">
+                <div>
+                  <div class="cert-name">MongoDB CRUD Operations: Replace and Delete</div>
+                  <div class="cert-issuer">MongoDB University (Jun 2025)</div>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--brand-navy);">Database</span>
+              </li>
+
+              <li class="cert-item">
+                <div>
+                  <div class="cert-name">Cybersecurity Analyst Professional</div>
+                  <div class="cert-issuer">IBM / Coursera</div>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--brand-navy);">Security</span>
+              </li>
+
+              <li class="cert-item">
+                <div>
+                  <div class="cert-name">Cybersecurity Job Simulation</div>
+                  <div class="cert-issuer">Forage</div>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--brand-navy);">Simulation</span>
+              </li>
+
+              <li class="cert-item">
+                <div>
+                  <div class="cert-name">Networking Basics</div>
+                  <div class="cert-issuer">Infosys Springboard</div>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--brand-navy);">Network</span>
+              </li>
+
+              <li class="cert-item">
+                <div>
+                  <div class="cert-name">Java Basics Aptitude</div>
+                  <div class="cert-issuer">Technical Assessment</div>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--brand-navy);">Software</span>
+              </li>
+
+              <li class="cert-item">
+                <div>
+                  <div class="cert-name">ChatGPT for Everyone</div>
+                  <div class="cert-issuer">Guvi HCL</div>
+                </div>
+                <span class="mono" style="font-size: 0.75rem; color: var(--brand-navy);">AI / NLP</span>
+              </li>
+            </ul>
           </div>
-          <div id="dynamicMsg" style="margin-top: 1rem; font-style: italic; color:#b47c48;"></div>
         </div>
-        <div><i class="fas fa-paper-plane" style="font-size: 3.5rem; color:#d6bfa5;"></i></div>
       </div>
     </section>
+
+    <!-- Contact & Communication -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>
+          <span>Contact & Direct Inquiries</span>
+          <span class="section-counter">05 / 05</span>
+        </h2>
+
+        <div class="contact-layout">
+          <div class="contact-info">
+            <h3 style="margin-bottom: var(--space-3);">Open to Security & GRC Opportunities</h3>
+            <p>
+              I am actively seeking internships and entry-level positions in Cloud Security, Security Analysis,
+              or Governance, Risk & Compliance (GRC). Whether you have an open opportunity, a technical question,
+              or would like to review my full audit reports, please reach out directly.
+            </p>
+
+            <div class="contact-channels">
+              <a href="mailto:pknailkar@gmail.com" class="channel-link">
+                <span class="channel-type">EMAIL</span>
+                <span>pknailkar@gmail.com</span>
+              </a>
+
+              <a href="tel:+917975010985" class="channel-link">
+                <span class="channel-type">PHONE</span>
+                <span>+91 7975010985</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/prachi-nailkar-85a024236" target="_blank" rel="noopener noreferrer" class="channel-link">
+                <span class="channel-type">LINKEDIN</span>
+                <span>linkedin.com/in/prachi-nailkar-85a024236 [↗]</span>
+              </a>
+
+              <a href="https://github.com/till-the-very-end" target="_blank" rel="noopener noreferrer" class="channel-link">
+                <span class="channel-type">GITHUB</span>
+                <span>github.com/till-the-very-end [↗]</span>
+              </a>
+            </div>
+
+            <div>
+              <button type="button" class="btn btn-secondary btn-copy-email">Copy Email Address</button>
+            </div>
+          </div>
+
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="senderName">Your Name</label>
+              <input type="text" id="senderName" class="form-input" placeholder="e.g. Jane Doe" required>
+            </div>
+
+            <div class="form-group">
+              <label for="senderEmail">Your Email</label>
+              <input type="email" id="senderEmail" class="form-input" placeholder="e.g. jane@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="senderMsg">Message / Inquiry</label>
+              <textarea id="senderMsg" class="form-textarea" placeholder="Detail your inquiry, project scope, or opportunity..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Transmit Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean System Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span>Prachi Kumar Nailkar</span> | <span>Computer Engineering, Wadia College (2027)</span>
+      </div>
+      <div>
+        <span>Pune, Maharashtra, India</span> | <span class="mono">pknailkar@gmail.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PDF Resume Modal -->
+  <div id="resumeModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Prachi_Kumar_Nailkar_Resume.pdf</h3>
+        <div style="display: flex; gap: var(--space-3); align-items: center;">
+          <a href="Prachi_Kumar_Nailkar_Resume.pdf" download="Prachi_Kumar_Nailkar_Resume.pdf" class="btn btn-primary btn-sm">Download PDF</a>
+          <button id="closeResumeModal" class="modal-close" type="button" aria-label="Close Modal">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <iframe src="Prachi_Kumar_Nailkar_Resume.pdf" title="Resume Document Preview"></iframe>
+      </div>
+    </div>
   </div>
-</main>
 
-<footer>
-  <p>© 2026 Prachi Kumar Nailkar — Simple, Sophisticated, Chic Portfolio | Built with <i class="fas fa-heart" style="color:#b47c48;"></i> and minimal elegance</p>
-</footer>
+  <!-- Toast Notification Feedback -->
+  <div id="toast" class="toast"></div>
 
-<script>
-  const copyBtn = document.getElementById('copyEmailBtn');
-  const quoteBtn = document.getElementById('showQuoteBtn');
-  const dynamicMsgDiv = document.getElementById('dynamicMsg');
-  const resumeMsgBtn = document.getElementById('resumeMsgBtn');
-
-  // Resume function - opens your PDF
-  function openResume() {
-    const resumeFileName = "Prachi_Nailkar_Resume_Latest.pdf";
-    const resumeWindow = window.open(resumeFileName, '_blank');
-    
-    if (!resumeWindow || resumeWindow.closed) {
-      const link = document.createElement('a');
-      link.href = resumeFileName;
-      link.download = "Prachi_Nailkar_Resume.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      dynamicMsgDiv.innerHTML = `<i class="fas fa-download"></i> Downloading resume...`;
-    } else {
-      dynamicMsgDiv.innerHTML = `<i class="fas fa-file-pdf"></i> Opening resume...`;
-    }
-    
-    setTimeout(() => {
-      if (dynamicMsgDiv.innerHTML.includes("resume")) dynamicMsgDiv.innerHTML = "";
-    }, 3000);
-  }
-
-  const chicQuotes = [
-    "✨ Elegance in code, precision in security.",
-    "🔐 Details matter: the smallest vulnerability can be a gateway.",
-    "📄 Audit with clarity, defend with strategy.",
-    "⚡ From packet analysis to GRC — mastering layers of protection.",
-    "🎯 Problem-solving is the art of turning obstacles into elegance."
-  ];
-
-  function showRandomQuote() {
-    const randomIndex = Math.floor(Math.random() * chicQuotes.length);
-    dynamicMsgDiv.innerHTML = `<i class="fas fa-feather-alt"></i> ${chicQuotes[randomIndex]}`;
-  }
-
-  if (quoteBtn) quoteBtn.addEventListener('click', showRandomQuote);
-  
-  if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText("pknailkar@gmail.com").then(() => {
-        dynamicMsgDiv.innerHTML = `<i class="fas fa-check-circle"></i> Email copied! ✨`;
-        setTimeout(() => dynamicMsgDiv.innerHTML = "", 2000);
-      });
-    });
-  }
-  
-  if (resumeMsgBtn) {
-    resumeMsgBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      openResume();
-    });
-  }
-
-  // Scroll spy for navigation
-  const sections = document.querySelectorAll('section, .hero');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollPos = window.scrollY + 120;
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
-      }
-    });
-    navLinks.forEach(link => {
-      link.style.color = '#2c2a29';
-      if (current && link.getAttribute('href') === `#${current}`) {
-        link.style.color = '#b47c48';
-      } else if (!current && link.getAttribute('href') === '#home') {
-        link.style.color = '#b47c48';
-      }
-    });
-  });
-
-  // Welcome message
-  window.addEventListener('load', () => {
-    dynamicMsgDiv.innerHTML = '✨ Welcome to my portfolio — where code meets elegance.';
-    setTimeout(() => {
-      if (dynamicMsgDiv.innerHTML.includes('Welcome')) {
-        setTimeout(() => dynamicMsgDiv.innerHTML = '', 3500);
-      }
-    }, 3000);
-  });
-</script>
+  <script src="app.js"></script>
 </body>
 </html>
